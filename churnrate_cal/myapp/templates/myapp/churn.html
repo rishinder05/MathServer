@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Forms in html</title>
+    </head>
+    <body>
+        <h1 align="center">Churn Rate Calculator</h1>
+        <h2 align="center"><b>U Rishinder (26008317)</b></h2>
+        <form method="post">
+            {% csrf_token %}
+            <label><b>InitialCustomer: </b></label>
+            <input type="text" name="initialCust" value="{{IniCus}}"><br><br>
+            <label><b>PresentCustomer: </b></label>
+            <input type="text" name="presentcust" value="{{PreCus}}"><br><br>
+            <input type="submit" value="Calculate"><br><br>
+            <label><b>Churn: </b></label>
+            <input type="text" value="{{churn}}">
+        </form>
+    </body>
+</html>

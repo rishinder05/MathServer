@@ -71,7 +71,7 @@ from django.shortcuts import render
 def Churn_rate(request):
     IniCus = float(request.POST.get('initialCust', '0'))
     PreCus = float(request.POST.get('presentcust', '0'))
-    churn = (IniCus/PreCus)*100   if request.method == 'POST' else 0
+    churn = ((IniCus-PreCus)/IniCus)*100 if request.method == 'POST' else 0
     print("Initial Customer =",IniCus)
     print("Present Customer =",PreCus)
     print("Churn Rate =",churn)
@@ -88,10 +88,10 @@ urlpatterns = [path('', views.Churn_rate, name='Churn_rate'),]
 ```
 
 ## OUTPUT - SERVER SIDE:
-![alt text](image-1.png)
+![alt text](image.png)
 
 ## OUTPUT - WEBPAGE:
-![alt text](image.png)
+![alt text](image-1.png)
 
 ## RESULT:
 The the web page to calculate Churn Rate using server-side scripts is created successfully.
